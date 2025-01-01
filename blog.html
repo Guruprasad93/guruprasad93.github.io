@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-right: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .toc {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 1rem;
+        }
+
+        .toc a {
+            color: #495057;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .toc a:hover {
+            color: #228be6;
+            background-color: #e9ecef;
+        }
+
+        .toc a.active {
+            color: #228be6;
+            background-color: #e9ecef;
+            font-weight: 500;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 3rem;
+            max-width: 1100px;
+        }
+
+        .article {
+            display: none; /* Hide all articles by default */
+        }
+
+        .article.active {
+            display: block; /* Show only active article */
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #212529;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            color: #868e96;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with Search and Table of Contents -->
+        <aside class="sidebar">
+            <div class="search-container">
+                <input type="search" class="search-input" placeholder="Search articles...">
+            </div>
+            <nav>
+                <ul class="toc">
+                    <li><a href="#article1" class="active">"Why" series: Part-1: Light, the mystery."</a></li>
+                    <!-- <li><a href="#article2">Understanding CSS Grid Layout</a></li>
+                    <li><a href="#article3">Modern JavaScript Features</a></li>
+                    <li><a href="#article4">Responsive Design Principles</a></li>
+                    <li><a href="#article5">Web Performance Optimization</a></li> -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Article 1 -->
+            <article id="article1" class="article active">
+                <header class="article-header">
+                    <h1 class="article-title">"Why" series: Part-1: Light, the mystery."</h1>
+                    <h2>What makes objects transparent/opaque?"</h2>
+                    <div class="article-meta">
+                        Published on December 30, 2024 • 10 min read
+                    </div>
+                </header>
+                <div class="article-content">
+                    <p> It's been ~4 years since I last posted here. Eventful time since, extremely grateful for that! </p>
+                    <p> I'm currently on a winter break, and have some time to unwind from the Gen-AI/AI world and explore some fundamental questions about the world - just for the fun of it. Thanks to Anusha (my wife) who's been equally interested in exploring random ideas every now and then!</p>
+                    
+                    <p>As we embarked on this conversation, I (or I could say, we) realized that we reached knowledge dead-ends when we kept asking "why" a couple of times. I don't claim that they're unknown to the world (but they were unknown to us before googling our way out of it) - and some continue to remain unknown to us.</p>
+
+                    <p>It all started with a discussion on photo-acoustic microscopy (PAM).</p>
+
+                    <p>Photo-acoustic microscopy is a very cool technique - where in the paradigm of imaging biological matter shifted from using only light as a source of illumination and detection, to using light for illumination while using "audio" for detection. A self-plug here: I had the opportunity to work/build on this method while pursuing a rotation project with Prof Lihong Wang, as a part of my PhD at Caltech.</p>
+
+                    <p>The idea goes this way: If we want to see anything, we need to illuminate that object with light, and once light bounces off that object - our eyes (detectors) capture those (bounced off) light rays; and reconstructs that object in our visual cortex - and we can "see" the object. Also, note that the light rays bouncing off an object carries (encodes) some information about the object - which helps us (or the detector) decode that information.</p>
+
+                    <p>Now, if we're interested in imaging our brain within the skull -</p>
+                    
+                    <!-- <ol> -->
+                        <li>We begin by shining light at the skull; </li>
+                        <li>We'd expect some light to pass through the skull - </li>
+                        <li>bounce off different regions of the brain - and then</li>
+                        <li>some light "particles" would exit the skull and</li>
+                        <li>if we capture those exiting light "particles" via a detector (could be, our eyes)</li>
+                        <li>we should be able to see a person's brain as well.</li>
+                    <!-- </ol> -->
+                    <br>
+                    <p>None of us can see each other's brains, and that's primarily because of attenuation of light as it passes through different layers described above.</p>
+
+                    
+                        <li>large majority of light "particles" bounce off the skull, and (can we put numbers? - yes we can in a bit)</li>
+                        <li>a small proportion of light "particles" enter the skull</li>
+                        <li>of that, many get attenuated (absorbed) by different parts of the brain, the grey/white matter, Cerebral Spinal Fluid, blood etc.</li>
+                        <li>A tiny fraction of light particles bounce off regions of the brain - and make its way to the skull</li>
+                        <li>of this tiny fraction, majority get trapped within the skull region,</li>
+                        <li>but a very very small number of light particles - makes its way out of the skull!</li>
+                        <li>those light particles, when captured by a detector - will enable us to "see" the brain</li>
+                    <br>
+
+                    <p>Due to the heavy attenuation of light particles as it passes through different layers - starting from the skull to different regions and ultimately having to traverse back to the detector - we almost always never are able to view the brain within.</p>
+
+                    <p>Instead, Photoacoustic microscopy - recommends that we shine light into brain and record audio waves via the detector - i.e.</p>
+
+                        <li>shine light - such that it passes through the skull</li>
+                        <li>reaches different regions of the brain</li>
+                        <li>gets absorbed</li>
+                        <li>causing a slight increase in temperature (micro-heating)</li>
+                        <li>resulting in an increase in pressure - as the volume of the micro-region remains constant</li>
+                        <li>the pressure gets dissipated by releasing a pressure wave (acoustic wave) - that travels through the brain - ultimately getting picked up by an acoustic detector.</li>
+                        <li>As the pressure wave encodes information about that region of the brain - a decoding algorithm on the detector - can decode the structural information of the brain region within!</li>
+                    
+                    <br>
+                    <p>As pressure waves don't get as attenuated within the brain/skull as much as light waves - we end up with the ability to "view" glimpses of the brain within the skull!</p>
+
+                    <p>This was all context - for what follows! Above - we've made a lot of assumptions - and I want to really question and understand this - just for my pleasure.</p>
+
+                    <p>We start with the premise that light from some source - passes through the skull - and enters the brain region. How can light travel through the skull? I have a very classical mechanics view of what light is - made of light "particles" (akin to Newtons corpuscular theory). We know light (as everything else in the world) is both a particle and a wave simultaneously - but let's try to discover that, than take it for granted.</p>
+
+                    <li>What makes some objects more capable of allowing light to pass, while other objects prevent light from passing through (transparent --> opaque)?</li>
+
+                    <p>Let's look at this from the molecular standpoint.</p>
+
+                    
+                        <li>If we were to think of light as composed of particles - the classical mechanical way or the most intuitive one that people would think of, would be to, model it as a stream of tiny light balls that are "trying to pass through an object"</li>
+                        
+                        <li>The object has some molecular packing, which refers to the way its molecules are assembled and how it holds the object intact.</li>
+                        
+                        <li>Some objects' packing have gaps that allow these light particles to bounce around (slowing them down) while others have a lot more space (allowing them to speed up) - akin to what we observe when light refracts through different media (it slows down in water/glass, but speeds up in air/vacuum).</li>
+                    
+                    <br>
+                    <p>All this seems okay, but then the natural question is - what is the size of a light particle. We define photons to be massless - so they have no defined size. Or another alternative would be to think of a photon's size to be the wavelength of the light (sorry, I threw wavelength without even defining it - but let's go with this for now). So - if the photon's diameter was 550nm (for visible light) - that size is WAY bigger than the atomic/molecular gaps. It's akin to a car moving through a road with small gravel stones. There's no reason why it should be able to pass through; OR why the molecular structure of the object should impede the speed of the light particle.</p>
+
+                    <p>Instead - a new idea had to be formulated - where we think of light as a packet of energy; and that packet of energy can interact with the atomic/molecular structure of the object. How can that interaction happen?</p>
+
+                        <li>When a packet of energy is incident on the atoms (building blocks of the object) - the electrons within the atom can use this energy to jump from one energy level to another.</li>
+                        
+                        <li>For every object (atom) - the electrons have a discrete number of levels that electrons can jump to. Basically - think of a building with a few different floors. You can only travel from one floor to another; you cannot stop midway. So - if the lift didn't have enough "energy" to take you from one floor to another - it's not going to take you anywhere.</li>
+
+                        <li>Akin to that analogy - the molecular structure of the object - decides the different energy levels that an electron can jump to. If the packet of energy can take it to a higher level - the electron will go; if not - it's going to remain where it was; and the packet of energy won't be used!</li>
+
+
+
+                        <li>the packet of energy will then transmit through the object without any attenuation.</li>
+
+                        <li>If the packet of energy can elevate the electron from one level to the next - it's possible that the electron relaxes from that higher level - and re-emits the packet of energy.</li>
+
+                        <li>It's also possible that the initial packet of energy is partially lost as thermal loss (as it ended up causing unintended oscillations/vibrations) and the rest of it was used for exciting an electron from one level to another. If such an electron would relax from its excited state - it will result in an emission of a packet of energy (that will have lesser energy than the incident one) - commonly used for generating fluorescence.</li>
+                        
+                        <li>Its also possible that the packet of energy creates a temporary dipole (realignment of electrons) - causing some oscillation - and that oscillation triggers neighboring atoms (when the previous dipole relaxes to original state) - resulting in the re-emission of a packet of energy when the "last" temporary dipole has to relax and there's no other temp dipole to trigger.</li>
+
+                    <br>
+
+                    <p>Now we have a couple of different mechanisms for why light (packets of energy) could pass through certain objects - making them transparent; while not passing through others - making them opaque.</p>
+
+                        <li>i.e. if the atoms absorb all the packets of energy - there's nothing to be emitted on the other end - making it opaque</li>
+
+                        <li>if the atoms reflect all the packets of energy (from the incident surface) - then there's nothing left for transmission. (e.g. well polished metals).</li>
+
+                    <br>
+                    <p>so far - so good.</p>
+
+                    <p>Some open questions that I'm sure have been answered but I'm unaware of - and would love to learn.</p>
+
+                        <li>when a packet of energy is incident on an object - how does the electron "know" its complete orbital structure? such that it refuses to even absorb the packet of energy when it's lower than the required energy orbital.</li>
+                        
+                        <li>What do we mean by light is a packet of energy? Clearly that packet of energy when incident on different objects - picks up a lot of information about a specific object. Amazing how that gets decoded by our retina (looking at how vision works in the brain - is super fun - maybe I'll write an amateur version of that mechanism sometime).</li>
+                        
+                        <li>What's the best way (easy way?) to calculate the electron orbital structure of different materials and the energy gap between these orbitals? so we can assess if the material is going to transmit packets of energy (photons) or not.</li>
+                        
+                        <li>The wave nature of light was first discovered by the Young's double slit experiment (YDSE) - but how can we best (intuitively) understand how light as a wave and as a packet of energy co-exist. I'm not looking for a textbook formulae --> like E=hv; where h is the planks constant and v (pronounced as nu) is the frequency of the light wave.</li>
+
+                    <br>
+
+                    <p>Please point me to resources (textbooks, videos or the like) to learn more on this topic! And if there are topics that might be of interest that you'd like for me to demystify or atleast spell out - happy to take them here.</p>
+
+                    <p>Here's a Yurts assistant - to help you with answering questions you may have on this topic. The answers will be grounded on information in these sources:
+                        <li><a href="https://en.wikipedia.org/wiki/Transparency_and_translucency">Wikipedia: Transparency and Translucency</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Photoacoustic_microscopy">Wikipedia: Photoacoustic microscopy</a></li>
+                        <li>(this blog post that follows)</li>
+                    </p>
+                    <!-- Your assistant will be rendered wherever you place this -->
+                    <div id="YurtsAssistant"></div>
+                    
+                    
+                </div>
+            </article>
+
+            <!-- Add more articles following the same pattern -->
+        </main>
+    </div>
+
+    <!-- <script>
+        // Handle article navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const toc = document.querySelector('.toc');
+            const articles = document.querySelectorAll('.article');
+            const tocLinks = document.querySelectorAll('.toc a');
+
+            toc.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    
+                    // Remove active class from all articles and links
+                    articles.forEach(article => article.classList.remove('active'));
+                    tocLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Add active class to clicked link and corresponding article
+                    e.target.classList.add('active');
+                    const targetArticle = document.querySelector(e.target.getAttribute('href'));
+                    targetArticle.classList.add('active');
+                }
+            });
+        });
+    </script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toc = document.querySelector('.toc');
+            const articles = document.querySelectorAll('.article');
+            const tocLinks = document.querySelectorAll('.toc a');
+            const searchInput = document.querySelector('.search-input');
+
+            // Handle article navigation
+            toc.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    
+                    // Remove active class from all articles and links
+                    articles.forEach(article => article.classList.remove('active'));
+                    tocLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Add active class to clicked link and corresponding article
+                    e.target.classList.add('active');
+                    const targetArticle = document.querySelector(e.target.getAttribute('href'));
+                    targetArticle.classList.add('active');
+                }
+            });
+
+            // Handle search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                // Create array of articles with their content
+                const articleData = Array.from(articles).map(article => ({
+                    id: article.id,
+                    title: article.querySelector('.article-title').textContent.toLowerCase(),
+                    content: article.querySelector('.article-content').textContent.toLowerCase(),
+                    link: document.querySelector(`.toc a[href="#${article.id}"]`)
+                }));
+
+                // Filter articles based on search term
+                articleData.forEach(article => {
+                    const isMatch = article.title.includes(searchTerm) || 
+                                article.content.includes(searchTerm);
+                    
+                    // Show/hide TOC links based on search
+                    if (isMatch) {
+                        article.link.style.display = 'block';
+                        article.link.parentElement.style.display = 'block';
+                    } else {
+                        article.link.style.display = 'none';
+                        article.link.parentElement.style.display = 'none';
+                    }
+
+                    // If search is empty, show all
+                    if (searchTerm === '') {
+                        article.link.style.display = 'block';
+                        article.link.parentElement.style.display = 'block';
+                    }
+                });
+
+                // If no results found, could add a "No results" message
+                const hasVisibleResults = Array.from(tocLinks).some(
+                    link => link.style.display !== 'none'
+                );
+                
+                // Update UI to show if no results found
+                let noResultsMsg = document.querySelector('.no-results');
+                if (!hasVisibleResults) {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('p');
+                        noResultsMsg.className = 'no-results';
+                        noResultsMsg.style.color = '#868e96';
+                        noResultsMsg.style.padding = '1rem';
+                        noResultsMsg.textContent = 'No articles found';
+                        toc.appendChild(noResultsMsg);
+                    }
+                } else if (noResultsMsg) {
+                    noResultsMsg.remove();
+                }
+            });
+        });
+    </script>
+
+    <script
+        type="module"
+        src="https://yay.yurts.ai/ChatWidgetSetup.js"
+        defer
+        ></script>
+        <script type="module" defer>
+        Yurts().widget({
+        elementId: 'YurtsAssistant',
+        settings: {
+            assistantId: 'a48cf607-0fdb-4786-b691-e1325ba6d3f5',
+            NEXT_PUBLIC_API: 'https://api.corp.yurts.ai/',
+            NEXT_PUBLIC_APPLICATION_URL: 'https://yay.yurts.ai',
+            AUTH_URL: 'https://auth.corp.yurts.ai/realms/yurts',
+            CLIENT_ID: 'yurtswidgets',
+            width: '100%',
+            height: '700px',
+            border: 'none',
+        },
+        });
+    </script>
+
+</body>
+</html>

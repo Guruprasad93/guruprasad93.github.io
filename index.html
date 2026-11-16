@@ -226,6 +226,23 @@
   .book .book-link { margin-top: 16px; font-size: 15px; }
   .badge.pending { color: var(--muted); background: var(--line-soft); border: 1px solid var(--line); }
 
+  .book .book-mine { font-size: 14.5px; color: var(--ink-soft); margin-bottom: .5em; }
+  .book .book-label { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 8px; }
+  .toc { margin-top: 20px; border-top: 1px solid var(--line-soft); padding-top: 16px; }
+  .toc summary { cursor: pointer; font-size: 14px; color: var(--accent-ink); list-style: none; display: inline-flex; align-items: center; gap: 7px; }
+  .toc summary::-webkit-details-marker { display: none; }
+  .toc summary::before { content: "\25B8"; font-size: 11px; transition: transform .15s ease; }
+  .toc[open] summary::before { transform: rotate(90deg); }
+  .toc summary:hover { text-decoration: underline; }
+  .toc ol { margin: 12px 0 0; padding: 0; list-style: none; }
+  .toc li { display: grid; grid-template-columns: 26px minmax(0, 1fr) 46px; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line-soft); }
+  .toc li:first-child { border-top: 0; }
+  .toc .n { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 1px; }
+  .toc .t { font-size: 14.5px; color: var(--ink); line-height: 1.45; }
+  .toc .au { display: block; font-size: 13.5px; color: var(--muted); margin-top: 1px; }
+  .toc .me { color: var(--ink-soft); font-weight: 600; }
+  .toc .p { font-size: 13px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; padding-top: 2px; }
+
   .callout {
     margin-top: 30px; padding: 16px 18px;
     border: 1px dashed var(--line); border-radius: var(--radius);
@@ -249,6 +266,9 @@
     .name { font-size: 27px; }
     .entry .when { margin-left: 0; width: 100%; }
     .pub, .award { grid-template-columns: 1fr; gap: 4px; }
+    .book { padding: 20px 18px; }
+    .toc li { grid-template-columns: 24px minmax(0, 1fr); }
+    .toc .p { display: none; }
     .pub .year, .award .year { padding-top: 0; }
   }
   @media print {
@@ -629,10 +649,35 @@
         <h3>Books co-authored</h3>
         <div class="book">
           <div class="kicker">Book &middot; co-authored</div>
-          <h3>IMICS &mdash; Exploring human consciousness through the principles of Indian philosophy</h3>
+          <h3>Exploring Human Consciousness from the Lens of Indian Philosophy: Mind&ndash;Brain Interface</h3>
           <div class="book-status"><span class="badge pending">In the process of self-publishing</span></div>
           <p>During my PhD, alongside my work on bio-inspired AI, I took a keen interest in ancient Indian philosophy &mdash; particularly the theories of consciousness set out in Sanskrit texts. Because so much of that material is encoded in Sanskrit poetry, I worked with a group of researchers &mdash; philosophers and physicists who share the interest &mdash; on a manuscript that draws those theories out and places them alongside modern experimental work in neuroscience, offering viable Indian philosophical frameworks for building a larger account of the mystery we call consciousness.</p>
           <p>With frontier LLMs advancing as quickly as they are, I'd like to bring these frameworks to bear on a question we will soon have to answer seriously: if and when we might declare an AI to be conscious.</p>
+          <p class="book-mine"><span class="book-label">My chapters</span> &ldquo;The Opposing Viewpoint&rdquo; (ch. 2) and &ldquo;Theory of Mind, Mirror Neurons, Empathy and Autism&rdquo; (ch. 11).</p>
+          <p class="book-mine"><span class="book-label">Contributors</span> Caltech, Rutgers, UCL, Temple University, UT Houston, New Children&rsquo;s Hospital and the Bhaktivedanta Institute for Higher Studies.</p>
+
+          <details class="toc">
+            <summary>Contents &mdash; 16 chapters</summary>
+            <ol>
+              <li><span class="n">1</span><span class="t">Perception, Scientific Knowledge and the Nature of Reality<span class="au">Kunal Mooley (Caltech)</span></span><span class="p">1</span></li>
+              <li><span class="n">2</span><span class="t">The Opposing Viewpoint<span class="au"><strong class="me">Guruprasad Raghavan</strong> (Caltech)</span></span><span class="p">13</span></li>
+              <li><span class="n">3</span><span class="t">Required Investigations on Eastern Philosophies<span class="au">Edwin Bryant (Rutgers)</span></span><span class="p">15</span></li>
+              <li><span class="n">4</span><span class="t">The Concept of Subtle Body<span class="au">Kunal Mooley (Caltech)</span></span><span class="p">19</span></li>
+              <li><span class="n">5</span><span class="t">Five Senses<span class="au">Michael Cremo (BIHS)</span></span><span class="p">63</span></li>
+              <li><span class="n">6</span><span class="t">Developing a Theoretical Framework to Explain Consciousness, Cognitive Agency and their Relationship with the Physical World<span class="au">Kunal Mooley (Caltech)</span></span><span class="p">71</span></li>
+              <li><span class="n">7</span><span class="t">Anesthesia and Vegetative State<span class="au">Tomas Chapa (BIHS)</span></span><span class="p">81</span></li>
+              <li><span class="n">8</span><span class="t">Goals, Attention and Decision-making<span class="au">Pradyumna Sepulveda (UCL)</span></span><span class="p">97</span></li>
+              <li><span class="n">9</span><span class="t">Reincarnation<span class="au">Jack Dodson (Temple University)</span></span><span class="p">117</span></li>
+              <li><span class="n">10</span><span class="t">Embryogenesis and the Formation of Living Biological Structures<span class="au">Shrestha Sinha-Ray (New Children&rsquo;s Hospital) and Chahat Upreti (UT Houston)</span></span><span class="p">135</span></li>
+              <li><span class="n">11</span><span class="t">Theory of Mind, Mirror Neurons, Empathy and Autism<span class="au"><strong class="me">Guruprasad Raghavan</strong> (Caltech)</span></span><span class="p">157</span></li>
+              <li><span class="n">12</span><span class="t">Remote Viewing<span class="au">Akhandadhi Das (SPi, BIHS)</span></span><span class="p">169</span></li>
+              <li><span class="n">13</span><span class="t">Placebo Effect<span class="au">Soumya Gupta (SPi, BIHS)</span></span><span class="p">185</span></li>
+              <li><span class="n">14</span><span class="t">Phantom Limb<span class="au">Soumya Gupta (SPi, BIHS)</span></span><span class="p">197</span></li>
+              <li><span class="n">15</span><span class="t">Engineering an Ayurveda Watch Device<span class="au">Jack Dodson (Temple University)</span></span><span class="p">251</span></li>
+              <li><span class="n">16</span><span class="t">Music, Meditation and Wellbeing<span class="au">Kunal Mooley (Caltech)</span></span><span class="p">255</span></li>
+            </ol>
+          </details>
+
           <p class="book-link"><a href="https://drive.google.com/file/d/1rkqadKMtcOEnNJcb-Bf8sl6nadeg7Z7P/view" rel="noopener">Read the manuscript &rarr;</a></p>
         </div>
       </div>

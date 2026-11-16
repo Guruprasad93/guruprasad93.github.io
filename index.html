@@ -215,9 +215,17 @@
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
   .card { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; color: inherit; border-bottom-color: var(--line); transition: border-color .15s ease, transform .15s ease; }
   .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .card .kicker { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .kicker { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
   .card h3 { font-size: 19px; margin: 8px 0 7px; }
   .card p { font-size: 14.5px; color: var(--muted); margin: 0; }
+  .book { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; margin-top: 16px; }
+  .book h3 { font-size: 23px; line-height: 1.25; margin: 9px 0 12px; }
+  .book p { font-size: 15.5px; color: var(--ink-soft); max-width: 72ch; }
+  .book p:last-child { margin-bottom: 0; }
+  .book .book-status { margin-bottom: 14px; }
+  .book .book-link { margin-top: 16px; font-size: 15px; }
+  .badge.pending { color: var(--muted); background: var(--line-soft); border: 1px solid var(--line); }
+
   .callout {
     margin-top: 30px; padding: 16px 18px;
     border: 1px dashed var(--line); border-radius: var(--radius);
@@ -614,11 +622,23 @@
     <section class="panel" id="writing" role="tabpanel" aria-labelledby="tab-writing" tabindex="0" hidden>
       <h2>Writing</h2>
       <div class="prose" style="margin-bottom:30px;">
-        <p>Essays and technical notes &mdash; mostly the <em>&ldquo;Why&rdquo; series</em>, where I chase a question from physics, mathematics or neuroscience until it explains something about how learning systems work. Everything lives on <a href="https://guruprasadr.substack.com" rel="noopener">Substack</a>.</p>
+        <p>A book on consciousness written with philosophers and physicists, and a running series of technical essays &mdash; mostly the <em>&ldquo;Why&rdquo; series</em>, where I chase a question from physics, mathematics or neuroscience until it explains something about how learning systems work.</p>
+      </div>
+
+      <div class="pubgroup" style="margin-bottom:38px;">
+        <h3>Books co-authored</h3>
+        <div class="book">
+          <div class="kicker">Book &middot; co-authored</div>
+          <h3>IMICS &mdash; Exploring human consciousness through the principles of Indian philosophy</h3>
+          <div class="book-status"><span class="badge pending">In the process of self-publishing</span></div>
+          <p>During my PhD, alongside my work on bio-inspired AI, I took a keen interest in ancient Indian philosophy &mdash; particularly the theories of consciousness set out in Sanskrit texts. Because so much of that material is encoded in Sanskrit poetry, I worked with a group of researchers &mdash; philosophers and physicists who share the interest &mdash; on a manuscript that draws those theories out and places them alongside modern experimental work in neuroscience, offering viable Indian philosophical frameworks for building a larger account of the mystery we call consciousness.</p>
+          <p>With frontier LLMs advancing as quickly as they are, I'd like to bring these frameworks to bear on a question we will soon have to answer seriously: if and when we might declare an AI to be conscious.</p>
+          <p class="book-link"><a href="https://drive.google.com/file/d/1rkqadKMtcOEnNJcb-Bf8sl6nadeg7Z7P/view" rel="noopener">Read the manuscript &rarr;</a></p>
+        </div>
       </div>
 
       <div class="pubgroup">
-        <h3>Essays</h3>
+        <h3>Technical articles &amp; essays</h3>
 
         <div class="pub">
           <div class="year">2026</div>

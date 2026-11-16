@@ -243,6 +243,8 @@
   .toc .me { color: var(--ink-soft); font-weight: 600; }
   .toc .p { font-size: 13px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; padding-top: 2px; }
 
+  .group-note { font-size: 13.5px; color: var(--muted); margin: 10px 0 0; }
+
   .callout {
     margin-top: 30px; padding: 16px 18px;
     border: 1px dashed var(--line); border-radius: var(--radius);
@@ -642,7 +644,7 @@
     <section class="panel" id="writing" role="tabpanel" aria-labelledby="tab-writing" tabindex="0" hidden>
       <h2>Writing</h2>
       <div class="prose" style="margin-bottom:30px;">
-        <p>A book on consciousness written with philosophers and physicists, and a running series of technical essays &mdash; mostly the <em>&ldquo;Why&rdquo; series</em>, where I chase a question from physics, mathematics or neuroscience until it explains something about how learning systems work.</p>
+        <p>A book on consciousness written with philosophers and physicists, technical articles from my time building retrieval and fine-tuning systems in industry, and the <em>&ldquo;Why&rdquo; series</em> &mdash; essays where I chase a question from physics, mathematics or neuroscience until it explains something about how learning systems work.</p>
       </div>
 
       <div class="pubgroup" style="margin-bottom:38px;">
@@ -683,7 +685,49 @@
       </div>
 
       <div class="pubgroup">
-        <h3>Technical articles &amp; essays</h3>
+        <h3>Technical articles</h3>
+        <p class="group-note">Written at Legion Intelligence (formerly Yurts AI).</p>
+
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <div class="title"><a href="https://www.legionintel.com/blog/legion-rag-performance-that-doesnt-break-the-bank" rel="noopener">Legion RAG: Performance That Doesn&rsquo;t Break the Bank</a></div>
+            <div class="authors"><strong>G. Raghavan</strong>, K. Gupta &mdash; benchmarking dynamic chunking and embedding against contextual retrieval: comparable accuracy at a fraction of the ingestion cost.</div>
+            <div class="venue"><span class="badge">Legion Intelligence</span> Oct 2024</div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <div class="title"><a href="https://www.legionintel.com/blog/rag-systems-vs-lcw-performance-and-cost-trade-offs" rel="noopener">RAG Systems vs. LCW: Performance and Cost Trade-offs</a></div>
+            <div class="authors"><strong>G. Raghavan</strong> &mdash; retrieval with small context windows measured against long-context models on Needle-in-a-Haystack: better retrieval from large corpora, far fewer GPUs.</div>
+            <div class="venue"><span class="badge">Legion Intelligence</span> Sep 2024</div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <div class="title"><a href="https://www.legionintel.com/blog/navigating-the-challenges-of-fine-tuning-and-catastrophic-forgetting" rel="noopener">Navigating the Challenges of Fine-Tuning and Catastrophic Forgetting</a></div>
+            <div class="authors"><strong>G. Raghavan</strong>, with S. Narayanan Hari and M. Thomson &mdash; why LoRA alone does not prevent catastrophic forgetting when tasks are learned in sequence, and how functionally invariant paths keep earlier tasks intact.</div>
+            <div class="venue"><span class="badge">Legion Intelligence</span> Mar 2024</div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year">2023</div>
+          <div>
+            <div class="title"><a href="https://www.legionintel.com/blog/illusions-unraveled-the-magic-and-madness-of-hallucinations-in-llms-part-1" rel="noopener">Illusions Unraveled: The Magic and Madness of Hallucinations in LLMs</a></div>
+            <div class="authors"><strong>G. Raghavan</strong>, with J. Gill and V. I. Afolabi &mdash; measuring how often open-source models invent entities in context-aware answers, and why hallucination is intrinsic to generative models.</div>
+            <div class="venue"><span class="badge">Legion Intelligence</span> Dec 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pubgroup">
+        <h3>Essays &mdash; the &ldquo;Why&rdquo; series</h3>
+        <p class="group-note">Published on <a href="https://guruprasadr.substack.com" rel="noopener">Substack</a>.</p>
 
         <div class="pub">
           <div class="year">2026</div>
@@ -784,7 +828,6 @@
         </a>
       </div>
 
-      <p class="callout">Space reserved here for technical blog posts from Yurts / Legion Intelligence (catastrophic forgetting, cost-efficient retrieval, hallucination metrics, RAG vs. long context) and for talks &mdash; send me the links and I&rsquo;ll slot them in.</p>
     </section>
 
     <footer>

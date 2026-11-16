@@ -1,212 +1,796 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <!--title>Home &larr; </title-->
-   <title>Home &larr; Guruprasad Raghavan</title>
-   <meta name="author" content="Guruprasad Raghavan" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guruprasad Raghavan</title>
+<meta name="description" content="Guruprasad Raghavan — Head of AI at Workfabric AI. Research on large language models, NeuroAI, and flexible machine learning systems. PhD, Caltech." />
+<meta name="author" content="Guruprasad Raghavan" />
+<meta property="og:title" content="Guruprasad Raghavan" />
+<meta property="og:description" content="Head of AI at Workfabric AI. Large language models, NeuroAI, and flexible machine learning systems." />
+<meta property="og:type" content="profile" />
+<meta property="og:image" content="/images/gpr_profile.jpeg" />
+<link rel="icon" href="/images/gpr_profile.jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --ink: #15181c;
+    --ink-soft: #3a4149;
+    --muted: #6a7280;
+    --line: #e3dfd6;
+    --line-soft: #efece5;
+    --accent: #1f4e5f;
+    --accent-ink: #1f4e5f;
+    --accent-soft: #eaf1f2;
+    --radius: 10px;
+    --maxw: 1120px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1215;
+      --surface: #16191d;
+      --ink: #e9eaec;
+      --ink-soft: #c6cace;
+      --muted: #949ca6;
+      --line: #262b31;
+      --line-soft: #1e2227;
+      --accent: #7fc3cf;
+      --accent-ink: #9ed4de;
+      --accent-soft: #17272c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1215;
+    --surface: #16191d;
+    --ink: #e9eaec;
+    --ink-soft: #c6cace;
+    --muted: #949ca6;
+    --line: #262b31;
+    --line-soft: #1e2227;
+    --accent: #7fc3cf;
+    --accent-ink: #9ed4de;
+    --accent-soft: #17272c;
+  }
 
-   <link rel="start" href="/" />
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s ease; }
+  a:hover { border-color: currentColor; }
+  h1, h2, h3, h4 { font-family: Newsreader, Georgia, "Times New Roman", serif; font-weight: 500; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+  p { margin: 0 0 1em; }
+  ul { margin: 0; padding: 0; list-style: none; }
 
-   <link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/feedname" title="RSS feed" />
-   
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/assets/themes/mark-reid/css/syntax.css" type="text/css" />
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    gap: 64px;
+    align-items: start;
+  }
 
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/assets/themes/mark-reid/css/screen.css" type="text/css" />
+  /* ---------- Left rail ---------- */
+  .rail { position: sticky; top: 48px; }
+  .avatar {
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--line);
+    margin-bottom: 22px;
+  }
+  .name { font-size: 30px; margin-bottom: 6px; }
+  .role { font-size: 15px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 2px; }
+  .role strong { font-weight: 500; color: var(--ink); }
+  .place { font-size: 14px; color: var(--muted); margin-top: 8px; }
 
+  .links { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 9px; }
+  .links a { font-size: 14.5px; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 9px; width: fit-content; }
+  .links a:hover { color: var(--accent-ink); }
+  .links svg { width: 15px; height: 15px; flex: none; opacity: .7; }
+
+  .interests { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .interests h4 { font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12.5px; color: var(--ink-soft); background: var(--accent-soft); border: 1px solid var(--line-soft); border-radius: 100px; padding: 3px 10px; }
+
+  /* ---------- Tabs ---------- */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 5;
+    padding-top: 4px;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    appearance: none;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    padding: 10px 14px;
+    font: inherit;
+    font-size: 14.5px;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 500; }
+  .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  html.js .panel[hidden] { display: none; }
+  .panel { animation: fade .25s ease; }
+  .panel:focus { outline: none; }
+  .panel:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; border-radius: 6px; }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .panel { animation: none; } }
+
+  .panel > h2 {
+    font-size: 13px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 26px;
+  }
+  html:not(.js) .panel > h2 { font-size: 24px; font-family: Newsreader, serif; text-transform: none; letter-spacing: -0.01em; color: var(--ink); margin-top: 48px; }
+
+  .lede { font-family: Newsreader, Georgia, serif; font-size: 21px; line-height: 1.5; color: var(--ink); margin-bottom: 26px; }
+  .prose { max-width: 68ch; color: var(--ink-soft); }
+  .prose p { font-size: 16.5px; }
+
+  /* ---------- Entry blocks ---------- */
+  .entry { padding: 0 0 30px 22px; border-left: 1px solid var(--line); position: relative; }
+  .entry:last-child { padding-bottom: 4px; }
+  .entry::before {
+    content: ""; position: absolute; left: -4.5px; top: 9px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--bg); border: 1.5px solid var(--accent);
+  }
+  .entry-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+  .entry h3 { font-size: 20px; }
+  .entry .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; margin-left: auto; white-space: nowrap; }
+  .entry .what { font-size: 15.5px; color: var(--ink-soft); margin-top: 3px; }
+  .entry .where { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+  .entry .meta { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+  .entry .meta em { font-style: normal; color: var(--ink-soft); }
+
+  .bullets { margin-top: 14px; display: flex; flex-direction: column; gap: 11px; max-width: 74ch; }
+  .bullets li { position: relative; padding-left: 17px; font-size: 15.5px; color: var(--ink-soft); line-height: 1.6; }
+  .bullets li::before { content: ""; position: absolute; left: 1px; top: .72em; width: 5px; height: 5px; border-radius: 50%; background: var(--line); }
+  .bullets strong { font-weight: 600; color: var(--ink); }
+
+  /* ---------- Publications ---------- */
+  .pubgroup + .pubgroup { margin-top: 34px; }
+  .pubgroup > h3 {
+    font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--muted);
+    padding-bottom: 8px; border-bottom: 1px solid var(--line-soft); margin-bottom: 4px;
+  }
+  .pub { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+  .pub:last-child { border-bottom: 0; }
+  .pub .year { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 3px; }
+  .pub .title a { color: inherit; }
+  .pub .title a:hover { color: var(--accent-ink); }
+  .pub .title { font-family: Newsreader, Georgia, serif; font-size: 18.5px; line-height: 1.35; color: var(--ink); }
+  .pub .authors { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .pub .authors strong { color: var(--ink-soft); font-weight: 600; }
+  .pub .venue { font-size: 13.5px; color: var(--ink-soft); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .badge { font-size: 11.5px; letter-spacing: .03em; text-transform: uppercase; font-weight: 600; color: var(--accent-ink); background: var(--accent-soft); border-radius: 4px; padding: 2px 7px; }
+  .pub .links-inline a { font-size: 13px; }
+
+  /* ---------- Awards ---------- */
+  .awards { display: flex; flex-direction: column; }
+  .award { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 18px; padding: 15px 0; border-bottom: 1px solid var(--line-soft); }
+  .award:last-child { border-bottom: 0; }
+  .award .year { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .award .title { font-size: 16px; color: var(--ink); font-weight: 500; }
+  .award .note { font-size: 14.5px; color: var(--muted); margin-top: 3px; line-height: 1.55; }
+
+  /* ---------- Writing ---------- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .card { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; color: inherit; border-bottom-color: var(--line); transition: border-color .15s ease, transform .15s ease; }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card .kicker { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .card h3 { font-size: 19px; margin: 8px 0 7px; }
+  .card p { font-size: 14.5px; color: var(--muted); margin: 0; }
+  .callout {
+    margin-top: 30px; padding: 16px 18px;
+    border: 1px dashed var(--line); border-radius: var(--radius);
+    font-size: 14.5px; color: var(--muted); background: var(--line-soft);
+  }
+
+  footer { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 20px; font-size: 13.5px; color: var(--muted); }
+
+  .theme-toggle {
+    position: fixed; right: 18px; bottom: 18px; z-index: 10;
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+    cursor: pointer; display: grid; place-items: center; font-size: 15px; line-height: 1;
+  }
+  .theme-toggle:hover { color: var(--accent-ink); border-color: var(--accent); }
+
+  @media (max-width: 880px) {
+    .wrap { grid-template-columns: 1fr; gap: 40px; padding: 36px 16px 64px; }
+    .rail { position: static; }
+    .avatar { width: 112px; height: 112px; }
+    .name { font-size: 27px; }
+    .entry .when { margin-left: 0; width: 100%; }
+    .pub, .award { grid-template-columns: 1fr; gap: 4px; }
+    .pub .year, .award .year { padding-top: 0; }
+  }
+  @media print {
+    .tabs, .theme-toggle { display: none; }
+    html.js .panel[hidden] { display: block !important; }
+    .wrap { display: block; }
+  }
+</style>
 </head>
-<body id="">
-<div id="site">
-  
-  <div id="header">
-    <h1>
-        <a href="/" title="GuruprasadR">Guruprasad Raghavan</a>
-        <!--span class="byline">&larr; <a href="/">Tejaswi Venumadhav</a></span-->
-    </h1>
+<body>
+<div class="wrap">
 
-    <ul>
-    
-    <li class="active"><a href="/index.html" class="active">Home</a></li>
-   
-    <li><a href="/research.html">Research</a></li>
-   
-    <li><a href="/publications.html">Publications</a></li>
-     
-    <!--li><a href="/CV.html">CV</a></li-->
-      
-    <li><a href="/blog.html">Blog</a></li>
-   
-    </ul>
-  </div>
+  <!-- ===================== LEFT RAIL ===================== -->
+  <aside class="rail">
+    <img class="avatar" src="/images/gpr_profile.jpeg" alt="Guruprasad Raghavan" />
+    <h1 class="name">Guruprasad Raghavan</h1>
+    <p class="role"><strong>Head of AI</strong>, Workfabric AI</p>
+    <p class="role">PhD, Computational Neuroscience &middot; Caltech</p>
+    <p class="place">Mountain View, California</p>
 
-  
+    <nav class="links" aria-label="Contact and profiles">
+      <a href="mailto:guru@alumni.caltech.edu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 7 9-7"/></svg>
+        guru@alumni.caltech.edu
+      </a>
+      <a href="https://www.linkedin.com/in/guruprasad-raghavan" rel="me noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.82-3-1.83 0-2.1 1.43-2.1 2.9V21h-4z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://guruprasadr.substack.com" rel="me noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16v2.6H4zM4 7.6h16V10H4zM4 12.2l8 4.6 8-4.6V21l-8-4.4L4 21z"/></svg>
+        Substack
+      </a>
+      <a href="https://github.com/Guruprasad93" rel="me noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+        GitHub
+      </a>
+    </nav>
 
-<div id="page">
-    
-<!--h1 class="emphnext">Home</h1-->
+    <div class="interests">
+      <h4>Research interests</h4>
+      <div class="chips">
+        <span class="chip">Large language models</span>
+        <span class="chip">NeuroAI</span>
+        <span class="chip">Machine learning</span>
+        <span class="chip">Dynamical systems</span>
+        <span class="chip">Spiking networks</span>
+        <span class="chip">Differential geometry</span>
+      </div>
+    </div>
+  </aside>
 
+  <!-- ===================== MAIN ===================== -->
+  <main>
+    <div class="tabs" role="tablist" aria-label="Sections">
+      <button class="tab" role="tab" id="tab-about"     aria-controls="about"     data-tab="about">About</button>
+      <button class="tab" role="tab" id="tab-education" aria-controls="education" data-tab="education">Education</button>
+      <button class="tab" role="tab" id="tab-work"      aria-controls="work"      data-tab="work">Work Experience</button>
+      <button class="tab" role="tab" id="tab-papers"    aria-controls="papers"    data-tab="papers">Papers &amp; Patents</button>
+      <button class="tab" role="tab" id="tab-awards"    aria-controls="awards"    data-tab="awards">Awards &amp; Honors</button>
+      <button class="tab" role="tab" id="tab-writing"   aria-controls="writing"   data-tab="writing">Writing</button>
+    </div>
 
-<img style="width:98%; height:auto;" src="/images/gpr_profile.jpeg" hspace="8" vspace="8" align="right" />
+    <!-- ---------- ABOUT ---------- -->
+    <section class="panel" id="about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+      <h2>About</h2>
+      <div class="prose">
+        <p class="lede">I build machine learning systems inspired by how human intelligence actually works &mdash; flexible, continually learning, and able to acquire new skills without forgetting the old ones.</p>
+        <p>I'm currently <strong>Head of AI at Workfabric AI</strong>, where I lead research on compounding intelligence: inferring feedback implicitly from a knowledge worker's sequence of human&ndash;computer interactions, and using it to post-train models that behave as digital twins of individual enterprise workers.</p>
+        <p>Before this, I was the <strong>Founder &amp; Lead Research Scientist at Legion Intelligence</strong> (previously Yurts AI), where I led research on domain-adaptable retrieval-augmented generation and on compressing LLM decoders for fully air-gapped deployments &mdash; using <em>functionally invariant paths</em>, the differential-geometry framework I developed during my PhD.</p>
+        <p>I completed my PhD at <strong>Caltech</strong> in computational neuroscience with <a href="http://thomsonlab.caltech.edu/" rel="noopener">Dr. Matt Thomson</a>, a research masters at <strong>Carnegie Mellon</strong> with Dr. Ge Yang, and a B.Tech at <strong>IIT Madras</strong>.</p>
+        <p>My interests have been broad: accidental beginnings in biology, a niche in computational biology, converging on computational neuroscience, and most recently artificial intelligence inspired by biological systems. Along the way I've been fortunate to work with and be guided by some of the best minds in these fields.</p>
+      </div>
+    </section>
 
-<p class="emphnext"></p>
-<p>Welcome!</p>  
-<!--![Profile picture](/assets/images/Tejaswi_picture.jpg)-->
+    <!-- ---------- EDUCATION ---------- -->
+    <section class="panel" id="education" role="tabpanel" aria-labelledby="tab-education" tabindex="0" hidden>
+      <h2>Education</h2>
+      <div>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>California Institute of Technology</h3>
+            <span class="when">2017 &ndash; 2023</span>
+          </div>
+          <p class="what">PhD in Computational Neuroscience</p>
+          <p class="where">Pasadena, California</p>
+          <ul class="bullets">
+            <li>Thesis: <em>Engineering flexible machine learning systems inspired by human intelligence</em></li>
+            <li>Advisor: Dr. Matt Thomson</li>
+          </ul>
+        </article>
 
-<p>My name is Guruprasad Raghavan. I'm the Founder and Lead Research Scientist at Yurts AI. </p>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Carnegie Mellon University</h3>
+            <span class="when">2015 &ndash; 2017</span>
+          </div>
+          <p class="what">Master of Science in Biomedical Engineering (research masters)</p>
+          <p class="where">Pittsburgh, Pennsylvania</p>
+          <ul class="bullets">
+            <li>GPA: 4.0 / 4.0 &middot; Advisor: Dr. Ge Yang</li>
+            <li>Coursework: Machine Learning, Neural Signal Processing, Mathematical Methods for Biophotonics</li>
+          </ul>
+        </article>
 
-<p> Prior to this, I completed my PhD at Caltech (advisor: Dr. Matt Thomson) in the domain of Computational Neuroscience; received a research masters from Carnegie Mellon
-(advisor: Dr. Ge Yang) and a B.Tech from IIT Madras. </p>
-<!-- 
-<p>My name is Guruprasad Raghavan. I am heading to pursue my PhD at Caltech with my research interests spanning building physical/mathematical models to explain biological phenomena predominantly at the single cell scale. </p> 
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Indian Institute of Technology, Madras</h3>
+            <span class="when">2011 &ndash; 2015</span>
+          </div>
+          <p class="what">Bachelor of Technology, Biotechnology</p>
+          <p class="where">Chennai, India</p>
+          <ul class="bullets">
+            <li>Core GPA: 9.88 / 10.0</li>
+            <li>Department Gold Medalist</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-<p>Prior to this, I received my B.Tech from IIT Madras followed by a Thesis-based Masters from Carnegie Mellon University (advisor: Dr. Ge Yang). </p>  -->
+    <!-- ---------- WORK ---------- -->
+    <section class="panel" id="work" role="tabpanel" aria-labelledby="tab-work" tabindex="0" hidden>
+      <h2>Work Experience</h2>
+      <div>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Workfabric AI</h3>
+            <span class="when">Aug 2025 &ndash; Present</span>
+          </div>
+          <p class="what">Head of AI</p>
+          <p class="where">Palo Alto, California &middot; Seed stage</p>
+          <ul class="bullets">
+            <li>Lead R&amp;D on algorithms for <strong>compounding intelligence</strong>. Conventional RLHF is capped by explicit human feedback, which is scarce, expensive, and does not scale; we found a way past that ceiling by inferring feedback implicitly from each knowledge worker's sequence of human&ndash;computer interactions, and using it to train proxy verifiers far more expressive than reward models built on explicit signals alone.</li>
+            <li>Post-trained models to build <strong>digital twins of individual enterprise knowledge workers</strong> that continually learn from that worker's sequence of digital interaction data without catastrophic forgetting, in order to build trust and improve productivity.</li>
+            <li>Designed rigorous <strong>evaluations for agentic AI</strong> &mdash; a critical, often underinvested piece of building trustworthy agents &mdash; built on multi-step agentic rubrics and validated through human&ndash;agent comparison, to systematically measure and improve agentic reasoning and task completion.</li>
+            <li>Built an agentic harness with <strong>recursive self-improvement</strong> that efficiently surfs through data to retrieve the interactions and context most relevant to an agent's goal, modeled after how humans or higher-order entities (account twin, product twin) actually behave; the harness improves itself from its own traces, with gains measured across multiple benchmarks.</li>
+            <li>Led development of <strong>X-SYNTH</strong>, a synthesis pipeline performing combinatorial synthesis over sequences of digital interaction data contributed by enterprise knowledge workers; took it from R&amp;D to production, where it now supports a daily load of 20K+ queries in a Fortune 500 deployment.</li>
+          </ul>
+        </article>
 
-<p> I've had very broad academic interests, beginning from an accidental biology beginnings to finding my niche in Computational biology, ultimately converging to 
-  Computational Neuroscience. And of course, most lately (over the last 4 years) in the domain of artifical intelligence inspired by biological systems. 
-  Over my academic journey, I've had the opportunity to work with some of the best minds in the field, and have been fortunate to have been guided by some of the best mentors.
-</p>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Legion Intelligence <span style="font-family:Inter,sans-serif;font-size:14px;color:var(--muted);">(previously Yurts AI)</span></h3>
+            <span class="when">Jun 2022 &ndash; Aug 2025</span>
+          </div>
+          <p class="what">Founder &amp; Lead Research Scientist</p>
+          <p class="where">San Francisco, California &middot; Seed to Series B</p>
+          <ul class="bullets">
+            <li><strong>Compressed LLM decoder models to enable fully air-gapped deployments</strong> by traversing functionally invariant paths (FIP) &mdash; a differential-geometry framework I developed during my PhD (<em>Nature Machine Intelligence</em>, 2024) that moves a network through weight space along performance-preserving paths. This sparsified decoders to fit the constrained compute of disconnected, classified environments (e.g. DoD edge) with no loss in generation quality.</li>
+            <li>Led the design, development, and evaluation of <strong>domain-adaptable retrieval-augmented generation (RAG) systems</strong>: built lightweight training pipelines for small ranker and language models, pioneering fine-tuning and FIP-tuning techniques that improved retrieval precision and cross-domain generalization; architected the end-to-end evaluation framework behind them, with task-specific benchmarks grounded in enterprise data (PDFs, CRMs, ERPs) measuring retrieval fidelity, grounding accuracy, and factual consistency beyond academic datasets.</li>
+            <li>Developed and productionized <strong>document layout-aware models</strong> that leveraged structural cues (sections, tables, lists) for semantically coherent document chunking, improving retrieval granularity and downstream QA quality across heterogeneous document types.</li>
+            <li>Drove <strong>thought leadership</strong> through widely read technical blog posts translating RAG and LLM research into scalable engineering practice &mdash; on catastrophic forgetting, cost-efficient retrieval, hallucination metrics, and the trade-offs between RAG and long-context models.</li>
+            <li>Functioned as a key technical leader across research, system architecture, and MLOps; helped establish Yurts' foundational ML infrastructure and scaled the team from seed stage to 70+ employees while mentoring researchers and aligning research with product priorities.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-<!-- <p>My academic interests range from building theranostic devices to studying biological phenomena at multiple scales, with the sole aim of making a high impact contribution to the health-care system.
-I spend most of my spare time writing about events that excite me on my blog <a href="https://guruprasadr.wordpress.com/"> "Journey" </a> and training for the IronMan 70.3 triathlon. </p>  -->
+    <!-- ---------- PAPERS & PATENTS ---------- -->
+    <section class="panel" id="papers" role="tabpanel" aria-labelledby="tab-papers" tabindex="0" hidden>
+      <h2>Papers &amp; Patents</h2>
 
-<!-- <p>On this website, you can find the details of my past and current <a href="/researchExperience.html">research topics</a>, my <a href="/publications.html">publication list</a> and my <a href="https://cmu.box.com/s/c3vtdxm21r8r5t9t58evv0d10ff1goi2">CV</a>. If you are interested in learning more about my work, contact me at:</p>  -->
+      <div class="pubgroup">
+        <h3>Patents</h3>
+        <div class="pub">
+          <div class="year">2026</div>
+          <div>
+            <div class="title">Flexible Machine Learning</div>
+            <div class="authors">M. W. Thomson, <strong>G. Raghavan</strong></div>
+            <div class="venue"><span class="badge">US Patent</span> No. 12,682,215 B2, issued Jul. 14, 2026 <span class="links-inline"><a href="https://patents.google.com/patent/US12682215B2/en" rel="noopener">patent &rarr;</a></span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">&mdash;</div>
+          <div>
+            <div class="title">Self Organization of Neuromorphic Machine Learning Architectures</div>
+            <div class="authors"><strong>G. Raghavan</strong>, M. Thomson, C. Lin</div>
+            <div class="venue"><span class="badge">US Patent</span></div>
+          </div>
+        </div>
+      </div>
 
-<!-- <div class="highlighter-rouge"><pre class="highlight"><code>Guruprasad Raghavan
-<strong>Department of Biomedical Engineering</strong>
-Scott Hall, Room 4N1002
-5000 Forbes Avenue
-Pittsburgh, PA 15213
-email: graghava@caltech.edu
-</code></pre>
-</div> -->
+      <div class="pubgroup">
+        <h3>Journal articles &amp; preprints</h3>
+        <div class="pub">
+          <div class="year">2026</div>
+          <div>
+            <div class="title">X-SYNTH: Beyond Retrieval &mdash; Enterprise Context Synthesis from Observed Digital Human Attention</div>
+            <div class="authors"><strong>G. Raghavan</strong>, G. Nychis, R. N. Murthy</div>
+            <div class="venue"><span class="badge">Preprint</span> arXiv:2605.15505 <span class="links-inline"><a href="https://arxiv.org/abs/2605.15505" rel="noopener">arXiv &rarr;</a></span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <div class="title">Engineering flexible machine learning systems by traversing functionally-invariant paths</div>
+            <div class="authors"><strong>G. Raghavan</strong>, B. Tharwat, S. Narayanan Hari, D. Satani, M. Thomson</div>
+            <div class="venue"><span class="badge">Nature Machine Intelligence</span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2019</div>
+          <div>
+            <div class="title">Direct Observation and Analysis of the Dynamics of the Photoresponsive Transcription Factor GAL4</div>
+            <div class="authors"><strong>G. Raghavan</strong>, K. Hidaka, H. Sugiyama, M. Endo</div>
+            <div class="venue"><span class="badge">Angewandte Chemie Int. Ed.</span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2018</div>
+          <div>
+            <div class="title">Whole-cell Scale Dynamic Organization of Lysosomes Revealed by Spatial Statistical Analysis</div>
+            <div class="authors">Q. Ba, <strong>G. Raghavan</strong>, K. Kiselyov, G. Yang</div>
+            <div class="venue"><span class="badge">Cell Reports</span> 23(12): 3591&ndash;3606</div>
+          </div>
+        </div>
+      </div>
 
-<!--Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+      <div class="pubgroup">
+        <h3>Conference papers, talks &amp; posters</h3>
+        <div class="pub">
+          <div class="year">2021</div>
+          <div>
+            <div class="title">Traversing Geodesics to Grow Biological Structures</div>
+            <div class="authors"><strong>G. Raghavan</strong>, P. Bhamidipati, M. Thomson</div>
+            <div class="venue"><span class="badge">NeurIPS 2021</span> AI4Science Workshop &middot; also presented as a poster at PyTorch Developer Day, Dec 2021</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2020</div>
+          <div>
+            <div class="title">Architecture Agnostic Neural Networks</div>
+            <div class="authors"><strong>G. Raghavan</strong>, S. Talukder, Y. Yue</div>
+            <div class="venue"><span class="badge">NeurIPS 2020</span> BabyMind Workshop &middot; contributed talk</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2020</div>
+          <div>
+            <div class="title">Sparsifying Networks by Traversing Geodesics</div>
+            <div class="authors"><strong>G. Raghavan</strong>, M. Thomson</div>
+            <div class="venue"><span class="badge">NeurIPS 2020</span> Differential Geometry for Deep Learning (DiffGeo4DL) &middot; talk</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2020</div>
+          <div>
+            <div class="title">A Dynamical Systems Approach to Understanding Spatial Localization in Recurrent Neural Networks</div>
+            <div class="authors">J. Gornet, <strong>G. Raghavan</strong>, C. Lin, M. Thomson</div>
+            <div class="venue"><span class="badge">Neuroscience 2020 (SfN)</span> poster</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2019</div>
+          <div>
+            <div class="title">Neural networks grown and organized by noise</div>
+            <div class="authors"><strong>G. Raghavan</strong>, M. Thomson</div>
+            <div class="venue"><span class="badge">NeurIPS 2019</span> proceedings</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2019</div>
+          <div>
+            <div class="title">Optimal Strategies for Repairing Neural Networks in the Brain</div>
+            <div class="authors"><strong>G. Raghavan</strong>, M. Thomson</div>
+            <div class="venue"><span class="badge">DeepMath 2019</span> Conference on the Mathematical Theory of Deep Neural Networks</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<ul class="tag_box inline">
-  
-  
+    <!-- ---------- AWARDS ---------- -->
+    <section class="panel" id="awards" role="tabpanel" aria-labelledby="tab-awards" tabindex="0" hidden>
+      <h2>Awards &amp; Honors</h2>
+      <div class="awards">
+        <div class="award">
+          <div class="year">2026</div>
+          <div>
+            <div class="title">Harvard Business School case study feature</div>
+            <div class="note">Workfabric AI's work on building AI twins was featured as one of a select few companies and products discussed as a case study at Harvard Business School, in a <a href="https://lnkd.in/p/gVJhnhwp" rel="noopener">post</a> by HBS Professor Dr. Suraj Srinivasan.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2025</div>
+          <div>
+            <div class="title">O-1A (Extraordinary Ability) status &amp; EB-1A approval</div>
+            <div class="note">Granted O-1A status and approved for EB-1A permanent residency (Extraordinary Ability, the &ldquo;Einstein Visa&rdquo;) by USCIS, Aug 2025.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2024</div>
+          <div>
+            <div class="title">Yurts AI Series B &mdash; $40M</div>
+            <div class="note">Yurts raised a $40 million Series B to build GenAI solutions for enterprises, featured in TechCrunch for developing AI chatbots for enterprises and the DoD (Dec 2024).</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2024</div>
+          <div>
+            <div class="title">Madrona IA40 (Intelligent Applications 40)</div>
+            <div class="note">Yurts recognized as one of the top 40 private companies shaping the future of GenAI applications.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">&mdash;</div>
+          <div>
+            <div class="title">Schmidt Science Fellowship nominee</div>
+            <div class="note">Nominated from Caltech, selected from a cohort of 200 graduate students.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">&mdash;</div>
+          <div>
+            <div class="title">Rothenberg Innovation Initiative (RI&sup2;)</div>
+            <div class="note">Awarded for developing algorithms to commercialize spiking neural networks for real-time ML applications.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2018</div>
+          <div>
+            <div class="title">Graduate Innovator Grant, Caltech Chen Institute</div>
+            <div class="note">For the project &ldquo;Fabricating Cortical Computers&rdquo; (Dec 2018).</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2017</div>
+          <div>
+            <div class="title">Jacobs Translational Medicine Fellowship</div>
+            <div class="note">Caltech's Jacobs Institute for Molecular Engineering for Medicine (Summer 2017).</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2016</div>
+          <div>
+            <div class="title">Jonas Salk Fellow</div>
+            <div class="note">Awarded by the Jewish HealthCare Foundation.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2015</div>
+          <div>
+            <div class="title">Divashree Award &amp; Silver Medal</div>
+            <div class="note">For the highest cumulative GPA in the Department of Biotechnology, IIT Madras (Class of 2015).</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">2014</div>
+          <div>
+            <div class="title">Honda Young Engineer and Scientist Award</div>
+            <div class="note">One of the top 14 students across India.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">&mdash;</div>
+          <div>
+            <div class="title">Dr. Anita-Mehta Damani Award (twice)</div>
+            <div class="note">For best academic record in Year 2 and Year 3, Department of Biotechnology, IIT Madras.</div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="year">&mdash;</div>
+          <div>
+            <div class="title">Sheikh Hamdan Award &amp; Sharjah Award</div>
+            <div class="note">For distinguished academic performance in the Gulf countries, awarded by the ruler of the UAE.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ---------- WRITING ---------- -->
+    <section class="panel" id="writing" role="tabpanel" aria-labelledby="tab-writing" tabindex="0" hidden>
+      <h2>Writing</h2>
+      <div class="prose" style="margin-bottom:30px;">
+        <p>Essays and technical notes &mdash; mostly the <em>&ldquo;Why&rdquo; series</em>, where I chase a question from physics, mathematics or neuroscience until it explains something about how learning systems work. Everything lives on <a href="https://guruprasadr.substack.com" rel="noopener">Substack</a>.</p>
+      </div>
 
-  
-     
-        <li><a href="/tags.html#recombination-ref">recombination <span>2</span></a></li>
-     
-        <li><a href="/tags.html#reionization-ref">reionization <span>2</span></a></li>
-     
-        <li><a href="/tags.html#atomic physics-ref">atomic physics <span>3</span></a></li>
-     
-        <li><a href="/tags.html#gravitational physics-ref">gravitational physics <span>2</span></a></li>
-     
-        <li><a href="/tags.html#neutron stars-ref">neutron stars <span>1</span></a></li>
-     
-        <li><a href="/tags.html#celestial mechanics-ref">celestial mechanics <span>1</span></a></li>
-     
-        <li><a href="/tags.html#high energy physics-ref">high energy physics <span>1</span></a></li>
-     
-        <li><a href="/tags.html#electroweak interactions-ref">electroweak interactions <span>1</span></a></li>
-    
-  
+      <div class="pubgroup">
+        <h3>Essays</h3>
 
+        <div class="pub">
+          <div class="year">2026</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/the-eternal-charioteer-the-hidden" rel="noopener">The Eternal Charioteer: The Hidden Identity of India&rsquo;s National Anthem</a></div>
+            <div class="authors">Connecting the dots between Tagore&rsquo;s Gitanjali, India&rsquo;s national anthem, and the Bhagavad Gita.</div>
+            <div class="venue"><span class="badge">Essay</span> May 2026</div>
+          </div>
+        </div>
 
+        <div class="pub">
+          <div class="year">2026</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/lessons-from-the-pendulum-mapping" rel="noopener">Lessons from the Pendulum: Mapping the Neural Manifold</a></div>
+            <div class="authors">Using information geometry to navigate the functional space between architectures.</div>
+            <div class="venue"><span class="badge">Why series</span> Jan 2026</div>
+          </div>
+        </div>
 
-</ul>
+        <div class="pub">
+          <div class="year">2025</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-chess-meets-chandas" rel="noopener">Chess Meets Chandas</a></div>
+            <div class="authors">Connecting Sanskrit poetry to the Knight&rsquo;s Tour.</div>
+            <div class="venue"><span class="badge">Why series</span> Jun 2025</div>
+          </div>
+        </div>
 
+        <div class="pub">
+          <div class="year">2025</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-what-did-bernoulli-euler" rel="noopener">What did Bernoulli, Euler and S. Ramanujan re-discover across the centuries?</a></div>
+            <div class="authors">Hint: Bernoulli numbers.</div>
+            <div class="venue"><span class="badge">Why series</span> Feb 2025</div>
+          </div>
+        </div>
 
-## Update Author Attributes
+        <div class="pub">
+          <div class="year">2025</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-the-fibonacci-odyssey" rel="noopener">The Fibonacci Odyssey</a></div>
+            <div class="authors">The intricate web of relationships between Fibonacci numbers, geometry, and the natural world.</div>
+            <div class="venue"><span class="badge">Why series</span> Feb 2025</div>
+          </div>
+        </div>
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+        <div class="pub">
+          <div class="year">2025</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-random-walks-part-ii" rel="noopener">Random Walks, Part II</a></div>
+            <div class="authors">Geometric construction can provide some intuition.</div>
+            <div class="venue"><span class="badge">Why series</span> Jan 2025</div>
+          </div>
+        </div>
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+        <div class="pub">
+          <div class="year">2025</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-random-walks" rel="noopener">Random Walks</a></div>
+            <div class="authors">Can we predict anything about &ldquo;random&rdquo; walks?</div>
+            <div class="venue"><span class="badge">Why series</span> Jan 2025</div>
+          </div>
+        </div>
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+        <div class="pub">
+          <div class="year">2025</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-really-how-small-are-atoms" rel="noopener">Really, how &ldquo;small&rdquo; are atoms? ft. Lord Kelvin</a></div>
+            <div class="authors">A simple binomial distribution might hold the key.</div>
+            <div class="venue"><span class="badge">Why series</span> Jan 2025</div>
+          </div>
+        </div>
 
-    $ rm -rf _posts/core-samples
+        <div class="pub">
+          <div class="year">2025</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-part-2-differentiation" rel="noopener">Differentiation &mdash; the unsung hero of AI</a></div>
+            <div class="authors">Why should we care about the math of differentiation?</div>
+            <div class="venue"><span class="badge">Why series</span> Jan 2025</div>
+          </div>
+        </div>
 
-Here's a sample "posts list".
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <div class="title"><a href="https://guruprasadr.substack.com/p/why-series-part-1-light-the-mystery" rel="noopener">Light, the mystery</a></div>
+            <div class="authors">What makes objects transparent or opaque?</div>
+            <div class="venue"><span class="badge">Why series</span> Dec 2024</div>
+          </div>
+        </div>
+      </div>
 
-<ul class="posts">
-  
-    <li><span>09 Dec 2014</span> &raquo; <a href="/sterile-nu.html">Sterile neutrino dark matter</a></li>
-  
-    <li><span>09 Dec 2014</span> &raquo; <a href="/reionization.html">Reionization</a></li>
-  
-    <li><span>09 Dec 2014</span> &raquo; <a href="/recombination.html">Recombination</a></li>
-  
-    <li><span>09 Dec 2014</span> &raquo; <a href="/neutron_stars.html">Neutron star binaries</a></li>
-  
-    <li><span>09 Dec 2014</span> &raquo; <a href="/perturbations.html">Cosmological perturbations</a></li>
-  
-</ul>
+      <div class="cards" style="margin-top:34px;">
+        <a class="card" href="https://guruprasadr.substack.com" rel="noopener">
+          <div class="kicker">Substack</div>
+          <h3>Subscribe to the newsletter</h3>
+          <p>New essays in the &ldquo;Why&rdquo; series &rarr;</p>
+        </a>
+      </div>
 
-## To-Do
+      <p class="callout">Space reserved here for technical blog posts from Yurts / Legion Intelligence (catastrophic forgetting, cost-efficient retrieval, hallucination metrics, RAG vs. long context) and for talks &mdash; send me the links and I&rsquo;ll slot them in.</p>
+    </section>
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.-->
-
-
-
-</div><!-- End Page -->
-
-
-  
-  <div id="footer">
-    <address>
-        <span class="copyright">
-            Content by <a href="/info/site.html">Guruprasad Raghavan</a>. Design adapted from  
-            <a href="http://mark.reid.name/">Mark Reid</a>
-            <!--br/-->
-            (<a rel="licence" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Some rights reserved</a>)            
-        </span>
-        <span class="engine">
-            Powered by <a href="http://github.com/mojombo/jekyll/" title="A static, minimalist CMS">Jekyll</a>
-        </span>
-    </address>
-  </div>
-  
+    <footer>
+      &copy; <span id="yr">2026</span> Guruprasad Raghavan &middot; <a href="mailto:guru@alumni.caltech.edu">guru@alumni.caltech.edu</a>
+    </footer>
+  </main>
 </div>
 
-<!--[if IE 6]>
-<script type="text/javascript"> 
-    /*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; } 
-    var IE6UPDATE_OPTIONS = {
-        icons_path: "http://static.ie6update.com/hosted/ie6update/images/"
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">&#9680;</button>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  html.classList.add('js');
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = {};
+  tabs.forEach(function (t) { panels[t.dataset.tab] = document.getElementById(t.dataset.tab); });
+
+  function select(name, pushHash) {
+    if (!panels[name]) name = 'about';
+    tabs.forEach(function (t) {
+      var on = t.dataset.tab === name;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.setAttribute('tabindex', on ? '0' : '-1');
+      panels[t.dataset.tab].hidden = !on;
+    });
+    if (pushHash && location.hash.slice(1) !== name) {
+      history.replaceState(null, '', '#' + name);
     }
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { select(t.dataset.tab, true); });
+    t.addEventListener('keydown', function (e) {
+      var i = tabs.indexOf(t), n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') n = tabs[0];
+      else if (e.key === 'End') n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); n.focus(); select(n.dataset.tab, true); }
+    });
+  });
+
+  select(location.hash.slice(1) || 'about', false);
+  if (location.hash) {
+    var toTop = function () {
+      window.scrollTo(0, 0);
+      // the browser focuses the #hash target; drop it so no focus ring shows on arrival
+      var ae = document.activeElement;
+      if (ae && ae.classList && ae.classList.contains('panel')) ae.blur();
+    };
+    toTop();
+    window.addEventListener('load', toTop, { once: true });
+  }
+  window.addEventListener('hashchange', function () { select(location.hash.slice(1) || 'about', false); });
+
+  // Theme toggle (remembers the viewer's choice when storage is available)
+  var saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  if (saved === 'dark' || saved === 'light') html.setAttribute('data-theme', saved);
+  document.getElementById('themeToggle').addEventListener('click', function () {
+    var isDark = html.getAttribute('data-theme') === 'dark' ||
+      (!html.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = isDark ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
 </script>
-<script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
-<![endif]-->
-
-  
-
-
-  <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-55844913-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
-
 </body>
 </html>
-
